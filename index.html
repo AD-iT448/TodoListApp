@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="public/css/output.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&display=swap">
+</head>
+<body class="container mx-auto w-full  bg-white mb-2 ">
+    <nav class="container w-full h-16 bg-blue-500 ">
+        <div class="flex justify-between mx-auto w-11/12  px-4 py-4 lg:w-11/12  items-center ">
+            <div class="flex items-center">
+                <h1 class="text-2xl text-white">TodoList App</h1>
+            </div>
+        </div>
+    </nav>
+    <section class=" w-11/12 mx-auto bg-slate-700  flex items-center justify-center mb-2 mt-2">
+        <div class="items-center ">
+            <div class=" items-center mx-20  h-40 bg-blue-500 rounded-full  border-2 border-white mb-2 mt-2">
+               <img src="public/img/profile.jpeg" alt=""
+               class=" h-40  rounded-full p-2 items-center justify-center ">
+            </div>
+           <div class="items-center ">
+            <h1 class="text-lg lg:text-2xl text-center text-blue-600 text-bold bungee-regular">ARI ADITYA BUNGANAN</h1>
+            <h3 class=" text-sm lg:text-base text-center text-blue-400 bungee-regular">Fullstack Developer</h3>
+            <p class="text-xs lg:text-base text-center text-blue-600 bungee-regular mt-2 mb-5">
+                ~ <span class="text-white">Work</span>  and <span class="text-white">Study</span>  is my Hobby ~</p>
+           </div>
+        </div>
+        </div>
+    </section>
+    <section class=" w-11/12 mx-auto bg-slate-500 flex items-center justify-center">
+        <div class="items-center">
+            <div class="items-center mx-5 flex justify-center flex-col mt-5 mb-5">
+                <form action="#">
+                    <textarea name="jobs" id="jobs" cols="50"  class="px-4 py-4 w-full" placeholder="Masukkan tugas di sini..."></textarea>
+                    <select class="w-full mb-2 p-2">
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                    <input type="date" id="due-date" class="px-3 w-full mb-2 flatpickr-input active" placeholder="Pilih Tanggal...">
+                    <button class="bg-green-500 px-4 w-full text-white p-2 mt-5">TAMBAH TUGAS</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <section class="w-11/12 mx-auto flex flex-row items-center justify-center bg-white">
+        <div class="items-center w-11/12 mx-auto">
+            <h1 class="mb-10 text-sm text-center lg:text-3xl text-blue-600 text-bold bungee-regular mt-5">Tugas yang akan dan Sedang di lakukan</h1>
+            <table class="border w-11/12 mx-0 lg:mx-auto mb-4">
+                <thead class="bg-blue-500 text-white border-b-2 border-gray-200">
+                    <tr class="border">
+                        <th class="p-3 text-base tracking-wide text-left ">Tugas</th>
+                        <th class="p-3 text-base tracking-wide text-left ">Prioritas</th>
+                        <th class="p-3 text-base tracking-wide text-left ">Tanggal</th>
+                        <th class="p-3 text-base tracking-wide text-left ">Status</th>
+                        <th class="p-3 text-base tracking-wide text-left ">Hapus</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border bg-gray-200">
+                        <td class="p-3 text-sm tracking-wide text-left">Maintenance Printer User Dept A</td>
+                        <td class="p-3 text-sm tracking-wide text-left">High</td>
+                        <td class="p-3 text-sm tracking-wide text-left">24/07/2024</td>
+                        <td class="p-3 text-sm tracking-wide text-left">
+                            <input type="checkbox" >
+                        </td>
+                        <td class="p-3 text-sm tracking-wide text-left">
+                            <span class="p-1.5 text-xs font-medium uppercase tracking-wider text-red-700 bg-yellow-400 hover:bg-red-700 hover:text-white cursor-pointer">Hapus</span>
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr class="border bg-gray-200">
+                        <td class="p-3 text-sm tracking-wide text-left">Maintenance Laptop</td>
+                        <td class="p-3 text-sm tracking-wide text-left">High</td>
+                        <td class="p-3 text-sm tracking-wide text-left">24/07/2024</td>
+                        <td class="p-3 text-sm tracking-wide text-left">
+                            <input type="checkbox" >
+                        </td>
+                        <td class="p-3 text-sm tracking-wide text-left">
+                            <span class="p-1.5 text-xs font-medium uppercase tracking-wider text-red-700 bg-yellow-400 hover:bg-red-700 hover:text-white cursor-pointer">Hapus</span>
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr class="border bg-gray-200">
+                        <td class="p-3 text-sm tracking-wide text-left">ngoding sampai mati</td>
+                        <td class="p-3 text-sm tracking-wide text-left">High</td>
+                        <td class="p-3 text-sm tracking-wide text-left">24/07/2024</td>
+                        <td class="p-3 text-sm tracking-wide text-left">
+                            <input type="checkbox" >
+                        </td>
+                        <td class="p-3 text-sm tracking-wide text-left">
+                            <span class="p-1.5 text-xs font-medium uppercase tracking-wider text-red-700 bg-yellow-400 hover:bg-red-700 hover:text-white cursor-pointer">Hapus</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h1 class="mb-10 text-sm text-center lg:text-3xl text-blue-600 text-bold bungee-regular">Tugas Selesai</h1>
+            <ul class="items-center mb-2 ">
+                <li class="p-3 text-red-600 w-11/12 mx-auto border mb-2">Maintenance Laptop Dept A</li>
+                <li class="p-3 text-red-600 w-11/12 mx-auto border mb-2">Maintenance Laptop Dept B</li>
+            </ul>
+            <button class="bg-green-500  w-11/12 flex mx-auto items-center justify-center text-white p-2 mb-4">Hapus Semua Tugas</button>
+        </div>
+    </section>
+</body>
+</html>
