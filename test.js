@@ -1,0 +1,64 @@
+document.getElementById('addTask').addEventListener('click', function() {
+    const taskText = document.getElementById('task').value;
+    const taskDate = document.getElementById('date').value;
+    const taskPriority = document.getElementById('priority').value;
+  
+    if (taskText === '' || taskDate === '') {
+      alert('Please enter a task and date');
+      return;
+    }
+  
+    const taskTable = document.getElementById('taskTable');
+    const row = document.createElement('tr');
+  
+    // Column 1: Task Text
+    const taskTextCell = document.createElement('td');
+    taskTextCell.classList.add('py-2', 'border', 'px-4');
+    taskTextCell.textContent = taskText;
+    row.appendChild(taskTextCell);
+  
+    // Column 2: Task Date
+    const taskDateCell = document.createElement('td');
+    taskDateCell.classList.add('py-2', 'border', 'px-4');
+    taskDateCell.textContent = taskDate;
+    row.appendChild(taskDateCell);
+  
+    // Column 3: Task Priority
+    const taskPriorityCell = document.createElement('td');
+    taskPriorityCell.classList.add('py-2', 'border', 'px-4');
+    taskPriorityCell.textContent = taskPriority;
+    row.appendChild(taskPriorityCell);
+  
+    // Column 4: Complete Checkbox
+    const completeCell = document.createElement('td');
+    completeCell.classList.add('py-2', 'border', 'px-4', 'text-center');
+    const completeCheckbox = document.createElement('input');
+    completeCheckbox.type = 'checkbox';
+    completeCheckbox.classList.add('form-checkbox');
+    completeCell.appendChild(completeCheckbox);
+    row.appendChild(completeCell);
+  
+    // Column 5: Delete Button
+    const deleteCell = document.createElement('td');
+    deleteCell.classList.add('py-2', 'border', 'px-4', 'text-center');
+    const deleteButton = document.createElement('button');
+    deleteButton.textContent = 'Delete';
+    deleteButton.classList.add('bg-red-500', 'text-white', 'p-1', 'rounded', 'disabled:opacity-50');
+    deleteButton.disabled = true; // Disable delete button initially
+    completeCheckbox.addEventListener('change', function() {
+      deleteButton.disabled = !completeCheckbox.checked; // Enable delete button if checkbox is checked
+    });
+    deleteButton.addEventListener('click', function() {
+      taskTable.removeChild(row); // Remove row on delete button click
+    });
+    deleteCell.appendChild(deleteButton);
+    row.appendChild(deleteCell);
+  
+    taskTable.appendChild(row);
+  
+    // Clear input fields
+    document.getElementById('task').value = '';
+    document.getElementById('date').value = '';
+    document.getElementById('priority').value = 'low';
+  });
+  

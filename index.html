@@ -16,41 +16,40 @@
             </div>
         </div>
     </nav>
-    <section class=" w-11/12 mx-auto bg-slate-700  flex items-center justify-center mb-2 mt-2">
-        <div class="items-center ">
-            <div class=" items-center mx-20  h-40 bg-blue-500 rounded-full  border-2 border-white mb-2 mt-2">
+    <section class=" w-11/12 mx-auto bg-slate-700  flex items-center justify-center mb-2 mt-2  " style="background-image: url(public/img/banner.jpg); align-items: center;">
+        <div class="items-center  w-9/12 lg:flex">
+            <div class=" items-center mx-20 w-40 lg:items-end  h-40 bg-blue-500 rounded-full  border-2 border-white mb-2 mt-2">
                <img src="public/img/profile.jpeg" alt=""
                class=" h-40  rounded-full p-2 items-center justify-center ">
             </div>
-           <div class="items-center ">
-            <h1 class="text-lg lg:text-2xl text-center text-blue-600 text-bold bungee-regular">ARI ADITYA BUNGANAN</h1>
-            <h3 class=" text-sm lg:text-base text-center text-blue-400 bungee-regular">Fullstack Developer</h3>
-            <p class="text-xs lg:text-base text-center text-blue-600 bungee-regular mt-2 mb-5">
+           <div class="items-center lg:justify-start">
+            <h1 class="text-lg lg:text-2xl text-center  lg:text-left text-blue-600 text-bold bungee-regular">ARI ADITYA BUNGANAN</h1>
+            <h3 class=" text-sm lg:text-base text-center lg:text-left text-blue-400 bungee-regular">Fullstack Developer</h3>
+            <p class="text-xs lg:text-base text-center lg:text-left text-blue-600 bungee-regular mt-2 mb-5">
                 ~ <span class="text-white">Work</span>  and <span class="text-white">Study</span>  is my Hobby ~</p>
+            <p class="text-xs lg:text-base text-center lg:text-left text-white bungee-regular mt-2 mb-5" id="waktu">  </p>
            </div>
         </div>
         </div>
     </section>
     <section class=" w-11/12 mx-auto bg-slate-500 flex items-center justify-center">
-        <div class="items-center">
-            <div class="items-center mx-5 flex justify-center flex-col mt-5 mb-5">
-                <form action="#">
-                    <textarea name="jobs" id="jobs" cols="50"  class="px-4 py-4 w-full" placeholder="Masukkan tugas di sini..."></textarea>
-                    <select class="w-full mb-2 p-2">
+        <div class="items-center w-8/12 ">
+            <div class="items-center mx-5  flex justify-center flex-col mt-5 mb-5">
+                    <textarea id="task" cols="50"  class="px-2 py-2 w-full mb-2" placeholder="Masukkan tugas di sini..."></textarea>
+                    <input type="date" id="date" class="px-2 py-2 w-full mb-2 flatpickr-input active" placeholder="Pilih Tanggal...">
+                    <select id="priority" class="w-full mb-2 p-2">
                         <option value="low">Low</option>
                         <option value="medium">Medium</option>
                         <option value="high">High</option>
                     </select>
-                    <input type="date" id="due-date" class="px-3 w-full mb-2 flatpickr-input active" placeholder="Pilih Tanggal...">
-                    <button class="bg-green-500 px-4 w-full text-white p-2 mt-5">TAMBAH TUGAS</button>
-                </form>
+                    <button id="addTask" class="w-full bg-blue-500 text-white p-2 rounded">TAMBAH TUGAS</button>
             </div>
         </div>
     </section>
     <section class="w-full text-sm md:text-md lg:text-lg mx-auto flex flex-row items-center justify-center bg-white">
         <div class="items-center w-11/12 mx-auto">
             <h1 class="mb-10 text-sm text-center lg:text-3xl text-blue-600 text-bold bungee-regular  mt-5">Tugas yang akan dan Sedang di lakukan</h1>
-            <table class="border w-11/12 mx-0 lg:mx-auto mb-4 overflow-auto hover:overflow-scroll">
+            <!-- <table class="border w-11/12 mx-0 lg:mx-auto mb-4 overflow-auto hover:overflow-scroll">
                 <thead class="bg-blue-500 text-white border-b-2 border-gray-200">
                     <tr class="border">
                         <th class="p-3 text-base tracking-wide text-left ">Tugas</th>
@@ -60,18 +59,8 @@
                         <th class="p-3 text-base tracking-wide text-left ">Hapus</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr class="border bg-gray-200">
-                        <td class="p-3 text-sm tracking-wide text-left">Maintenance Printer User Dept A</td>
-                        <td class="p-3 text-sm tracking-wide text-left">High</td>
-                        <td class="p-3 text-sm tracking-wide text-left">24/07/2024</td>
-                        <td class="p-3 text-sm tracking-wide text-left">
-                            <input type="checkbox" >
-                        </td>
-                        <td class="p-3 text-sm tracking-wide text-left">
-                            <span class="p-1.5 text-xs font-medium uppercase tracking-wider text-red-700 bg-yellow-400 hover:bg-red-700 hover:text-white cursor-pointer">Hapus</span>
-                        </td>
-                    </tr>
+                <tbody id="taskTable">
+                   
                 </tbody>
                 <tbody>
                     <tr class="border bg-gray-200">
@@ -86,27 +75,39 @@
                         </td>
                     </tr>
                 </tbody>
-                <tbody>
-                    <tr class="border bg-gray-200">
-                        <td class="p-3 text-sm tracking-wide text-left">ngoding sampai mati</td>
-                        <td class="p-3 text-sm tracking-wide text-left">High</td>
-                        <td class="p-3 text-sm tracking-wide text-left">24/07/2024</td>
-                        <td class="p-3 text-sm tracking-wide text-left">
-                            <input type="checkbox" >
-                        </td>
-                        <td class="p-3 text-sm tracking-wide text-left">
-                            <span class="p-1.5 text-xs font-medium uppercase tracking-wider text-red-700 bg-yellow-400 hover:bg-red-700 hover:text-white cursor-pointer">Hapus</span>
-                        </td>
-                    </tr>
+                
+            </table> -->
+            <table class="min-w-full bg-white mb-20">
+                <thead>
+                  <tr>
+                    <th class="py-2">Task</th>
+                    <th class="py-2">Priority</th>
+                    <th class="py-2">Date</th>
+                    <th class="py-2">Complete</th>
+                    <th class="py-2">Action</th>
+                  </tr>
+                </thead>
+                <tbody id="taskTable">
+                  <!-- Task rows will be added here -->
                 </tbody>
-            </table>
+              </table>
             <h1 class="mb-10 text-sm text-center lg:text-3xl text-blue-600 text-bold bungee-regular">Tugas Selesai</h1>
-            <ul class="items-center mb-2 ">
-                <li class="p-3 text-red-600 w-11/12 mx-auto text-xs md:text-sm  lg:text-md  border mb-2">Maintenance Laptop Dept A</li>
-                <li class="p-3 text-red-600 w-11/12 mx-auto text-xs md:text-sm  lg:text-md border mb-2">Maintenance Laptop Dept B</li>
-            </ul>
+            <table class="min-w-full bg-white mb-20">
+                <thead>
+                  <tr>
+                    <th class="py-2">Task</th>
+                    <th class="py-2">Priority</th>
+                    <th class="py-2">Date</th>
+                    <th class="py-2">Complete</th>
+                  </tr>
+                </thead>
+                <tbody id="taskDoneTable">
+                  <!-- Task rows will be added here -->
+                </tbody>
+              </table>
             <button class="bg-green-500  w-11/12 flex mx-auto  items-center justify-center text-white p-2 mb-4">Hapus Semua Tugas</button>
         </div>
     </section>
+    <script src="script.js"></script>
 </body>
 </html>
