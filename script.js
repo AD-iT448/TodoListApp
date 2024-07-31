@@ -13,6 +13,7 @@ document.getElementById('addTask').addEventListener('click', function() {
   
     const taskTable = document.getElementById('taskTable');
     const row = document.createElement('tr');
+    const taskDoneTable = document.getElementById('taskDoneTable');
   
     // Column 1: Task Text
     const taskTextCell = document.createElement('td');
@@ -58,6 +59,34 @@ document.getElementById('addTask').addEventListener('click', function() {
     row.appendChild(deleteCell);
   
     taskTable.appendChild(row);
+
+    deleteButton.addEventListener('click', function() {
+      if (completeCheckbox.checked) {
+        // Move to completed table
+        const completedTable = document.getElementById('completedTable');
+        const completedRow = document.createElement('tr');
+  
+        const completedTaskTextCell = document.createElement('td');
+        completedTaskTextCell.classList.add('py-2', 'border', 'px-4');
+        completedTaskTextCell.textContent = taskText;
+        completedRow.appendChild(completedTaskTextCell);
+  
+        const completedTaskDateCell = document.createElement('td');
+        completedTaskDateCell.classList.add('py-2', 'border', 'px-4');
+        completedTaskDateCell.textContent = taskDate;
+        completedRow.appendChild(completedTaskDateCell);
+  
+        const completedTaskPriorityCell = document.createElement('td');
+        completedTaskPriorityCell.classList.add('py-2', 'border', 'px-4');
+        completedTaskPriorityCell.textContent = taskPriority;
+        completedRow.appendChild(completedTaskPriorityCell);
+  
+        completedTable.appendChild(completedRow);
+        taskTable.removeChild(row); // Remove row from task table
+      }
+    });
+
+    
   
     // Clear input fields
     document.getElementById('task').value = '';
