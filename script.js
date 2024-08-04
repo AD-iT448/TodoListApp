@@ -48,7 +48,7 @@ document.getElementById('addTask').addEventListener('click', function() {
     const deleteButton = document.createElement('button');
     deleteButton.textContent = 'Delete';
     deleteButton.classList.add('bg-yellow-500','hover:bg-red-500','hover:text-white','bungee-regular', 'text-red-500', 'p-1', 'rounded', 'disabled:opacity-50');
-    deleteButton.disabled = true; // tombol hapus di matikan terlebih dahulu kemudian
+    deleteButton.disabled = true; // tombol hapus di matikan terlebih dahulu
     completeCheckbox.addEventListener('change', function() {
       if(completeCheckbox.checked){
         row.classList.add('line-through','text-gray-500');
@@ -97,8 +97,7 @@ document.getElementById('addTask').addEventListener('click', function() {
       }
     });
 
-    
-  
+   
     // Hapus Input fields
     document.getElementById('task').value = '';
     document.getElementById('date').value = '';
@@ -108,4 +107,10 @@ document.getElementById('addTask').addEventListener('click', function() {
     
   });
   
-  
+   // Hapus Semua tugas
+   document.getElementById('clearCompleted').addEventListener('click', function() {
+    const completedTable = document.getElementById('completedTable');
+    while (completedTable.firstChild) {
+      completedTable.removeChild(completedTable.firstChild);
+    }
+  });
