@@ -139,3 +139,5 @@ document.getElementById('addTask').addEventListener('click', function() {
       completedTable.removeChild(completedTable.firstChild);
     }
   });
+
+  //Menyala abangku..wkwk

@@ -12,7 +12,7 @@
     <nav class="container w-full h-16 bg-blue-500 ">
         <div class="flex justify-between mx-auto w-11/12  px-4 py-4 lg:w-11/12  items-center ">
             <div class="flex items-center">
-                <h1 class="text-2xl text-white">TodoList App</h1>
+                <h1 class="text-2xl text-white bungee-regular">TodoList App</h1>
             </div>
         </div>
     </nav>
@@ -23,7 +23,7 @@
                class=" h-40  rounded-full p-2 items-center justify-center ">
             </div>
            <div class="items-center lg:justify-start">
-            <h1 class="text-lg lg:text-2xl text-center  lg:text-left text-blue-600 text-bold bungee-regular">ARI ADITYA BUNGANAN</h1>
+            <h1 class="text-lg lg:text-2xl text-center  lg:text-left text-slate-100 text-bold bungee-regular">ARI ADITYA BUNGANAN</h1>
             <h3 class=" text-sm lg:text-base text-center lg:text-left text-blue-400 bungee-regular">Fullstack Developer</h3>
             <p class="text-xs lg:text-base text-center lg:text-left text-blue-600 bungee-regular mt-2 mb-5">
                 ~ <span class="text-white">Work</span>  and <span class="text-white">Study</span>  is my Hobby ~</p>
@@ -35,20 +35,20 @@
     <section class=" w-11/12 mx-auto bg-slate-500 flex items-center justify-center">
         <div class="items-center w-11/12 lg:w-8/12 ">
             <div class="items-center mx-5  flex justify-center flex-col mt-5 mb-5">
-                    <textarea id="task" cols="50"  class="px-2 py-2 w-full mb-2" placeholder="Masukkan tugas di sini..."></textarea>
-                    <input type="date" id="date" class="px-2 py-2 w-full mb-2 flatpickr-input active" placeholder="Pilih Tanggal...">
-                    <select id="priority" class="w-full mb-2 p-2">
+                    <textarea id="task" cols="50"  class="px-2 py-2 w-full mb-2 bungee-regular" placeholder="Masukkan tugas di sini..."></textarea>
+                    <input type="date" id="date" class="px-2 py-2 w-full mb-2 flatpickr-input active bungee-regular" placeholder="Pilih Tanggal...">
+                    <select id="priority" class="w-full mb-2 p-2 bungee-regular text-sm">
                         <option value="low">Low</option>
                         <option value="medium">Medium</option>
                         <option value="high">High</option>
                     </select>
-                    <button id="addTask" class="w-full bg-blue-500 text-white p-2 rounded">TAMBAH TUGAS</button>
+                    <button id="addTask" class="w-full bg-blue-500 text-white p-2 rounded bungee-regular">TAMBAH TUGAS</button>
             </div>
         </div>
     </section>
-    <section class="w-full text-sm md:text-md lg:text-lg mx-auto flex flex-row items-center justify-center bg-white">
+    <section class="w-11/12 text-sm md:text-md bg-slate-500 lg:text-lg mx-auto flex flex-row items-center justify-center">
         <div class="items-center w-11/12 mx-auto">
-            <h1 class="mb-10 text-sm text-center lg:text-3xl text-blue-600 text-bold bungee-regular  mt-5">Tugas yang akan dan Sedang di lakukan</h1>
+            <h1 class="mb-10 text-sm text-center lg:text-3xl text-white text-bold bungee-regular  mt-5">Tugas yang akan dan Sedang di lakukan</h1>
           
             <table class="min-w-full bg-white mb-20">
                 <thead>
@@ -64,7 +64,7 @@
                  
                 </tbody>
               </table>
-            <h1 class="mb-10 text-sm text-center lg:text-3xl text-blue-600 text-bold bungee-regular">Tugas Selesai</h1>
+            <h1 class="mb-10 text-sm text-center lg:text-3xl text-white text-bold bungee-regular">Tugas Selesai</h1>
             <table class="min-w-full bg-white mb-20">
                 <thead>
                   <tr>
@@ -77,7 +77,7 @@
                  
                 </tbody>
               </table>
-            <button id="clearCompleted" class="bg-green-500  w-11/12 flex mx-auto  items-center justify-center text-white p-2 mb-4">Hapus Semua Tugas</button>
+            <button id="clearCompleted" class="bg-green-500  w-full bungee-regular flex mx-auto  items-center justify-center text-white p-2 mb-4">Hapus Semua Tugas</button>
         </div>
     </section>
     <script src="script.js"></script>
