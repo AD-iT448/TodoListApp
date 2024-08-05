@@ -1,5 +1,30 @@
-const waktu = new Date()
-document.getElementById("waktu").innerHTML = waktu
+// Menampilkan HARI DAN TANGGAL
+// const waktu = new Date()
+// document.getElementById("waktu").innerHTML = waktu;
+
+function getDayName (dayIndex){
+  const day = ['Minggu','Senin','Selasa','Rabu','Kamis','Jumat','Sabtu'];
+  return day[dayIndex];
+}
+
+function getMonthName(monthIndex){
+  const month = ['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember'];
+  return month[monthIndex];
+}
+
+function displayDate() {
+  const now = new Date();
+  const dayName = getDayName(now.getDay());
+  const day = now.getDate();
+  const monthName = getMonthName(now.getMonth());
+  const year = now.getFullYear();
+
+  const formattedDate = `${dayName}, ${day} ${monthName} ${year}`;
+  document.getElementById("current-date").textContent = formattedDate;
+}
+
+displayDate();
+
 
 document.getElementById('addTask').addEventListener('click', function() {
     const taskText = document.getElementById('task').value;
